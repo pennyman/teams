@@ -23,16 +23,8 @@ def lambda_handler(event, context):
     logger.info("Message: " + str(message))
 
     alarm_name = message['AlarmName']
-    # old_state = message['OldStateValue']
     new_state = message['NewStateValue']
     reason = message['NewStateReason']
-
-    # slack_message = {
-    #     'channel': TEAMS_CHANNEL,
-    #     'text': "[%s]\nSTATE : %s\nREASON : %s" % (alarm_name, new_state, reason)
-    # }
-
-    # req = Request(HOOK_URL, json.dumps(slack_message))
 
     notification_message = {
         'title': " % s" % (alarm_name),
